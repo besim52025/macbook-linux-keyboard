@@ -41,8 +41,9 @@ sudo keyd.rvaiya reload
 > Do **not** copy key names blindly from another machine or from a VM — run
 > `evtest` on the system you are fixing. Verified here: the `grave = 102nd` swap
 > works on a MacBook Air **M4** (macOS host, Debian 13 guest under UTM). On a
-> MacBook 9,1 `evtest` reports the **same** two raw codes (`KEY_GRAVE`/`KEY_102ND`),
-> but `keyd` there fails to parse the config — **not yet fixed**.
+> MacBook 9,1 `evtest` reports the **same** two raw codes (`KEY_GRAVE`/`KEY_102ND`)
+> — **fixed there on 16 Nov 2026**: a minimal device-scoped swap config parses
+> cleanly.
 
 ## Why not `xmodmap`?
 

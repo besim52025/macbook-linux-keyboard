@@ -4,8 +4,8 @@ Fix swapped or mis-mapped keys on MacBook and MacBook Air keyboards running Linu
 Debugged on a **MacBook Air M4 (macOS host, Debian 13 guest under UTM VM)** and a
 **MacBook 9,1 (12-inch, 2016, native Debian)** with the **Turkish Q** layout — the
 method generalizes to any layout. The `keyd` fix is verified on the M4; on the
-MacBook 9,1 it is **not yet fixed** (same raw key codes, but `keyd` there fails to
-parse the config — see the Tested-on table).
+MacBook 9,1 it is **fixed (verified 16 Nov 2026)** — a minimal device-scoped
+swap config parses cleanly there (see the Tested-on table).
 
 Keywords: macbook linux keyboard, debian macbook keyboard fix, wayland keyd,
 keyd.rvaiya debian, turkish q linux, xkb macbook, macbook air m4 linux, macbook 9,1 linux.
@@ -90,7 +90,7 @@ Turkish Q worked example: [`docs/layouts/turkish-q.md`](docs/layouts/turkish-q.m
 | Hardware | Environment | Display server | Layout | Result |
 | --- | --- | --- | --- | --- |
 | MacBook Air M4 | macOS host, Debian 13 guest in UTM VM | Wayland | Turkish Q | ✅ fixed — `keyd`, `grave = 102nd` |
-| MacBook 9,1 (12-inch, 2016) | Debian 13 (native) | Wayland | Turkish Q | ⚠️ not yet fixed — same `KEY_GRAVE`/`KEY_102ND` codes as the M4, but `keyd` there fails to parse the config |
+| MacBook 9,1 (12-inch, 2016) | Debian 13 (native) | Wayland | Turkish Q | ✅ fixed (16 Nov 2026) — same `KEY_GRAVE`/`KEY_102ND` codes as the M4; a minimal device-scoped swap config parses cleanly |
 
 *Contributions welcome — add a row for your model / distro / layout.*
 
