@@ -8,8 +8,8 @@ With the Turkish Q layout on Debian, the `"` and `<` keys are reversed:
 - The key that should give `<` outputs `"`
 
 Reproduced on:
-- **MacBook Air M4** — Debian in a **UTM VM** (Wayland)
-- **MacBook 9,1 (12-inch, 2016)** — **native Debian** (Wayland) — `grave = 102nd` swap does **not** fix it there
+- **MacBook Air M4** — macOS host, Debian 13 guest in a **UTM VM** (Wayland)
+- **MacBook 9,1 (12-inch, 2016)** — **native Debian 13** (Wayland)
 
 ## Root cause
 
@@ -40,7 +40,9 @@ sudo keyd.rvaiya reload
 
 > Do **not** copy key names blindly from another machine or from a VM — run
 > `evtest` on the system you are fixing. Verified here: the `grave = 102nd` swap
-> works on a MacBook Air **M4** (UTM VM) only — it does **not** fix a MacBook 9,1.
+> works on a MacBook Air **M4** (macOS host, Debian 13 guest under UTM). On a
+> MacBook 9,1 `evtest` reports the **same** two raw codes (`KEY_GRAVE`/`KEY_102ND`),
+> but `keyd` there fails to parse the config — **not yet fixed**.
 
 ## Why not `xmodmap`?
 
