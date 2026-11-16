@@ -26,7 +26,7 @@ keyd.rvaiya debian, turkish q linux, xkb macbook, macbook air m4 linux, macbook 
 
 ---
 
-## Debian gotcha: the `keyd` →  `keyd.rvaiya` rename
+## 🔥 Debian gotcha: the `keyd` →  `keyd.rvaiya` rename
 
 On Debian another package also ships a binary named `keyd`. Debian renames the
 real one to **`keyd.rvaiya`**. Every guide that says `sudo keyd ...` will fail.
@@ -52,7 +52,7 @@ sudo systemctl status keyd
 
 ---
 
-## Quick start (Wayland, recommended)
+## 🚑 Quick start (Wayland, recommended)
 
 ```bash
 # 1. Identify keys
@@ -85,7 +85,7 @@ Turkish Q worked example: [`docs/layouts/turkish-q.md`](docs/layouts/turkish-q.m
 
 ---
 
-## Tested on
+## 🧪Tested on
 
 | Hardware | Environment | Display server | Layout | Result |
 | --- | --- | --- | --- | --- |
